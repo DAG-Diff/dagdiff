@@ -158,7 +158,7 @@ body {
 
 .gradient-text {
     /* background: linear-gradient(to right, #ad6eff, #e674c9); */
-    background: linear-gradient(to right, hsl(251, 100%, 71%), #cf55ff); /* DarkBlue to LightBlue */
+    background: linear-gradient(to right, hsl(251, 100%, 65%), hsl(278, 100%, 73%)); /* DarkBlue to LightBlue */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
