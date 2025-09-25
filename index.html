@@ -43,7 +43,8 @@
             <div class="container is-max-desktop">
                 <div class="columns is-centered">
                     <div class="column has-text-centered">
-                        <h1 class="title is-1 publication-title"><span class="gradient-text">DAGDiff</span>: Guiding Dual-Arm Grasp Diffusion to Stable and Collision-Free Grasps</h1>
+                        <h1 class="title is-1 publication-title"><span class="gradient-text">DAGDiff</span>: Guiding
+                            Dual-Arm Grasp Diffusion to Stable and Collision-Free Grasps</h1>
 
                     </div>
                 </div>
@@ -52,22 +53,66 @@
     </section>
 
 
-    <section class="hero is-light px-5 pb-3" style="background-color: rgb(255, 255, 255);">
+    <!-- <section class="hero is-light px-5 pb-3" style="background-color: rgb(255, 255, 255);">
         <div class="container is-max-desktop">
             <div class="columns is-centered video-container">
-                <video autoplay muted loop playsinline style="border-radius: 15px">
-                    <source src="./static/videos/intro_final0001-0500.mkv" type="video/mp4">
+                <video autoplay muted style="border-radius: 15px">
+                    <source src="./static/videos/intro_video.mp4" type="video/mp4">
                 </video>
             </div>
+    </section> -->
+
+    <section class="section" style="background-color: rgb(252, 252, 252);">
+        <div class="container is-max-desktop">
+            <div class="columns has-text-centered">
+                <div class="column is-full-width">
+                    <!-- <h2 class="title is-3">Model Architecture</h2> -->
+                    <img src="./static/images/teaser_icra2025.svg" width="70%">
+                    <!-- <div class="content has-text-justified my-4">
+                        <b>Overview of the proposed method</b>: <b>(a)</b> Given an object point cloud P , our network
+                        encodes
+                        geometric features into dense feature maps. Next,
+                        randomly initialized dual-arm grasps \(H\) are used to transform a fixed query cloud into query
+                        points, followed by feature sampling through bilinear interpolation. Conditioned on the noise
+                        step \(t\)
+                        these features are passed through \(F_{\theta}\), which predicts the SDF of the query points and
+                        a feature vector.
+                        This vector is then used by three output heads that predict energy \((E_\alpha)\), force-closure
+                        probability \((C_{\beta}^{\text{fc}})\) and
+                        collision probability \((C_{\gamma}^{\text{col}})\), jointly guiding the diffusion process. <b>(b)</b> At
+                        inference, denoising proceeds from random
+                        intialization \((t=250\)) to refine grasps \((t=0\)). The energy head drives the generative
+                        dynamics, while the force-closure and collision heads bias the generation until stable,
+                        collision-free dual-arm grasps emerge.
+
+                    </div> -->
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section class="section mt-3 mb-0" style="background-color: rgb(252, 252, 252);">
+
+    <section class="section mt-3 mb-0" style="background-color: rgb(255, 255, 255);">
         <div class="container is-max-desktop">
             <div class="columns is-centered has-text-centered">
                 <div class="column is-four-fifths">
                     <h2 class="title is-3 mt-3">Abstract</h2>
                     <div class="content has-text-justified">
-                        Reliable dual-arm grasping is essential for manipulating large and complex objects but remains a challenging problem due to stability, collision, and generalization requirements. Prior methods typically decompose the task into two independent grasp proposals, relying on region priors or heuristics that limit generalization and provide no principled guarantee of stability. We propose DAGDiff, an end-to-end framework that directly denoises to grasp pairs in the $SE(3) \times SE(3)$ space. Our key insight is that stability and collision can be enforced more effectively by guiding the diffusion process with classifier signals, rather than relying on explicit region detection or object priors. To this end, DAGDiff integrates geometry-, stability-, and collision-aware guidance terms that steer the generative process toward grasps that are physically valid and force-closure compliant. We comprehensively evaluate DAGDiff through analytical force-closure checks, collision analysis, and large-scale physics-based simulations, showing consistent improvements over previous work on these metrics. Finally, we demonstrate that our framework generates dual-arm grasps directly from real-world point clouds of previously unseen objects, which are executed on a heterogeneous dual-arm setup where two manipulators reliably grasp and lift them.
+                        Reliable dual-arm grasping is essential for manipulating large and complex objects but remains a
+                        challenging problem due to stability, collision, and generalization requirements. Prior methods
+                        typically decompose the task into two independent grasp proposals, relying on region priors or
+                        heuristics that limit generalization and provide no principled guarantee of stability. We
+                        propose DAGDiff, an end-to-end framework that directly denoises to grasp pairs in the $SE(3)
+                        \times SE(3)$ space. Our key insight is that stability and collision can be enforced more
+                        effectively by guiding the diffusion process with classifier signals, rather than relying on
+                        explicit region detection or object priors. To this end, DAGDiff integrates geometry-,
+                        stability-, and collision-aware guidance terms that steer the generative process toward grasps
+                        that are physically valid and force-closure compliant. We comprehensively evaluate DAGDiff
+                        through analytical force-closure checks, collision analysis, and large-scale physics-based
+                        simulations, showing consistent improvements over previous work on these metrics. Finally, we
+                        demonstrate that our framework generates dual-arm grasps directly from real-world point clouds
+                        of previously unseen objects, which are executed on a heterogeneous dual-arm setup where two
+                        manipulators reliably grasp and lift them.
                     </div>
                 </div>
             </div>
@@ -75,6 +120,69 @@
         </div>
     </section>
 
+    <!-- <section class="hero is-light px-5 pb-3" style="background-color: rgb(255, 255, 255);">
+        <div class="container is-max-desktop">
+            <h2 class="title is-3 mt-3">Abstract</h2>
+            <div class="columns is-centered video-container">
+                <video autoplay muted style="border-radius: 15px">
+                    <source src="./static/videos/intro_video.mp4" type="video/mp4">
+                </video>
+            </div>
+    </section> -->
+
+    <section class="section" style="background-color: rgb(252, 252, 252);">
+        <div class="container is-max-desktop">
+            <div class="columns has-text-centered">
+                <div class="column is-full-width">
+                    <h2 class="title is-3">Video Explanation</h2>
+                    <div class="columns is-centered video-container">
+                        <video controls muted poster="./static/images/video_thumbnail.png" preload="none"
+                            src="./static/videos/intro_video.mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background-color: rgb(255, 255, 255);">
+        <div class="container is-max-desktop">
+            <div class="columns has-text-centered">
+                <div class="column is-full-width">
+                    <h2 class="title is-3">Model Architecture</h2>
+                    <img src="./static/images/pipeline.svg">
+                    <div class="content has-text-justified my-4">
+                        <b>Overview of the proposed method</b>: <b>(a)</b> Given an object point cloud P , our network
+                        encodes
+                        geometric features into dense feature maps. Next,
+                        randomly initialized dual-arm grasps \(H\) are used to transform a fixed query cloud into query
+                        points, followed by feature sampling through bilinear interpolation. Conditioned on the noise
+                        step \(t\)
+                        these features are passed through \(F_{\theta}\), which predicts the SDF of the query points and
+                        a feature vector.
+                        This vector is then used by three output heads that predict energy \((E_\alpha)\), force-closure
+                        probability \((C_{\beta}^{\text{fc}})\) and
+                        collision probability \((C_{\gamma}^{\text{col}})\), jointly guiding the diffusion process. <b>(b)</b> At
+                        inference, denoising proceeds from random
+                        intialization \((t=250\)) to refine grasps \((t=0\)). The energy head drives the generative
+                        dynamics, while the force-closure and collision heads bias the generation until stable,
+                        collision-free dual-arm grasps emerge.
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background-color: rgb(252, 252, 252);">
+        <div class="container is-max-desktop">
+            <div class="columns has-text-centered">
+                <div class="column is-full-width">
+                    <h2 class="title is-3">Results</h2>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
     <footer class="footer">
