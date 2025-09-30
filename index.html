@@ -138,30 +138,13 @@
             </div>
     </section> -->
 
-    <section class="section" style="background-color: rgb(252, 252, 252);">
+    <section class="section" style="background-color: rgb(255, 255, 255);">
         <div class="container is-max-desktop">
             <div class="columns has-text-centered">
                 <div class="column is-full-width">
-                    <!-- <h2 class="title is-3">Model Architecture</h2> -->
-                    <img src="./static/images/teaser_icra2025.svg" width="70%">
-                    <!-- <div class="content has-text-justified my-4">
-                        <b>Overview of the proposed method</b>: <b>(a)</b> Given an object point cloud P , our network
-                        encodes
-                        geometric features into dense feature maps. Next,
-                        randomly initialized dual-arm grasps \(H\) are used to transform a fixed query cloud into query
-                        points, followed by feature sampling through bilinear interpolation. Conditioned on the noise
-                        step \(t\)
-                        these features are passed through \(F_{\theta}\), which predicts the SDF of the query points and
-                        a feature vector.
-                        This vector is then used by three output heads that predict energy \((E_\alpha)\), force-closure
-                        probability \((C_{\beta}^{\text{fc}})\) and
-                        collision probability \((C_{\gamma}^{\text{col}})\), jointly guiding the diffusion process. <b>(b)</b> At
-                        inference, denoising proceeds from random
-                        intialization \((t=250\)) to refine grasps \((t=0\)). The energy head drives the generative
-                        dynamics, while the force-closure and collision heads bias the generation until stable,
-                        collision-free dual-arm grasps emerge.
-
-                    </div> -->
+                    <video autoplay loop muted poster="" preload="none" style="width:100%;">
+                        <source src="./static/videos/website-teaser.webm">
+                    </video>
                 </div>
             </div>
         </div>
@@ -267,32 +250,32 @@
                 <div class="column is-full-width">
                     <h2 class="title is-3">Real Life Results</h2>
                     <div class="columns is-multiline is-centered">
-                        <div class="column is-one-third">
-                            <video autoplay loop muted poster="" preload="none" style="width:100%;">
+                        <div class="column is-half">
+                            <video autoplay loop muted poster="" preload="none" style="width:100%; border: 2px solid #ddd; border-radius: 10px;">
                                 <source src="./static/videos/real_life_bucket.webm">
                             </video>
                             <h4 class="title is-5">Bucket</h4>
                         </div>
-                        <div class="column is-one-third">
-                            <video autoplay loop muted poster="" preload="none" style="width:100%;">
+                        <div class="column is-half">
+                            <video autoplay loop muted poster="" preload="none" style="width:100%; border: 2px solid #ddd; border-radius: 10px;">
                                 <source src="./static/videos/real_life_tray.webm">
                             </video>
                             <h4 class="title is-5">Tray</h4>
                         </div>
-                        <div class="column is-one-third">
-                            <video autoplay loop muted poster="" preload="none" style="width:100%;">
+                        <div class="column is-half">
+                            <video autoplay loop muted poster="" preload="none" style="width:100%; border: 2px solid #ddd; border-radius: 10px;">
                                 <source src="./static/videos/real_life_drone.webm">
                             </video>
                             <h4 class="title is-5">Drone</h4>
                         </div>
-                        <div class="column is-one-third">
-                            <video autoplay loop muted poster="" preload="none" style="width:100%;">
+                        <div class="column is-half">
+                            <video autoplay loop muted poster="" preload="none" style="width:100%; border: 2px solid #ddd; border-radius: 10px;">
                                 <source src="./static/videos/real_life_frypan.webm">
                             </video>
                             <h4 class="title is-5">Frypan</h4>
                         </div>
-                        <div class="column is-one-third">
-                            <video autoplay loop muted poster="" preload="none" style="width:100%;">
+                        <div class="column is-half">
+                            <video autoplay loop muted poster="" preload="none" style="width:100%; border: 2px solid #ddd; border-radius: 10px;">
                                 <source src="./static/videos/real_life_saucepan.webm">
                             </video>
                             <h4 class="title is-5">Saucepan</h4>
