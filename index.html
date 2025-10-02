@@ -157,7 +157,7 @@
         <div class="container is-max-desktop">
             <div class="columns has-text-centered">
                 <div class="column is-full-width">
-                    <h2 class="title is-3">Video Explanation</h2>
+                    <h2 class="title is-2">Video Explanation</h2>
                     <div class="columns is-centered video-container">
                         <video controls muted poster="./static/images/video_thumbnail.png" preload="none"
                             src="./static/videos/intro_video.mp4">
@@ -172,14 +172,14 @@
         <div class="container is-max-desktop">
             <div class="columns is-centered has-text-centered">
                 <div class="column is-four-fifths">
-                    <h2 class="title is-3 mt-3">Abstract</h2>
+                    <h2 class="title is-2 mt-3">Abstract</h2>
                     <div class="content has-text-justified">
                         Reliable dual-arm grasping is essential for manipulating large and complex objects but remains a
                         challenging problem due to stability, collision, and generalization requirements. Prior methods
                         typically decompose the task into two independent grasp proposals, relying on region priors or
                         heuristics that limit generalization and provide no principled guarantee of stability. We
-                        propose DAGDiff, an end-to-end framework that directly denoises to grasp pairs in the $SE(3)
-                        \times SE(3)$ space. Our key insight is that stability and collision can be enforced more
+                        propose DAGDiff, an end-to-end framework that directly denoises to grasp pairs in the \(SE(3)
+                        \times SE(3)\) space. Our key insight is that stability and collision can be enforced more
                         effectively by guiding the diffusion process with classifier signals, rather than relying on
                         explicit region detection or object priors. To this end, DAGDiff integrates geometry-,
                         stability-, and collision-aware guidance terms that steer the generative process toward grasps
@@ -209,14 +209,14 @@
 
 
 
-    <section class="section" style="background-color: rgb(255, 255, 255); margin-bottom:20px">
+    <section class="section" style="background-color: rgb(255, 255, 255); margin-bottom:0px">
         <div class="container is-max-desktop">
             <div class="columns has-text-centered">
                 <div class="column is-full-width">
-                    <h2 class="title is-3">Model Architecture</h2>
-                    <img src="./static/images/pipeline.svg">
+                    <h2 class="title is-2">Model Architecture</h2>
+                    <img class="mt-4" src="./static/images/pipeline.svg">
                     <div class="content has-text-justified my-4">
-                        <b>Overview of the proposed method</b>: <b>(a)</b> Given an object point cloud P , our network
+                        <b>Overview of the proposed method</b>: <b>(a)</b> Given an object point cloud \(P\), our network
                         encodes
                         geometric features into dense feature maps. Next,
                         randomly initialized dual-arm grasps \(H\) are used to transform a fixed query cloud into query
@@ -240,20 +240,20 @@
 
             <h4 class="title is-4 has-text-centered">\(SE(3) \times SE(3) \longleftrightarrow \mathbb{R}^{12}\)</h4>
 
-            <div class="columns has-text-justified mt-4">
+            <div class="columns has-text-justified mt-2 mb-5">
                 <div class="column is-full-width is-flex is-justify-content-center is-align-items-center"">
                     <img src=" ./static/images/logmap2.svg">
                 </div>
 
                 <div class="column is-full-width">
-                    Additionally, dual-arm grasp poses are represented as pairs of rigid-body transformations
+                    <b>Denoising in the dual-arm grasp space:</b> Additionally, dual-arm grasp poses are represented as pairs of rigid-body transformations
                     in \(SE(3) \times SE(3)\), which are mapped into a \(12\text{D}\) Euclidean space for diffusion and
                     back.
                     Each \(SE(3)\) element is
                     first projected into its \(6\text{D}\) Lie algebra representation via the <u>logarithmic map</u>
                     \((\operatorname{Logmap_{2}})\), and
-                    concatenated to form a vector in \(\mathbb{R}^{12}\). 
-                    <br/> <br/>
+                    concatenated to form a vector in \(\mathbb{R}^{12}\).
+                    <br /> <br />
                     The diffusion process is then carried out in
                     this Euclidean space. To obtain valid grasp poses, the <u>exponential map</u>
                     \((\operatorname{Expmap_{2}})\) maps vectors in \(\mathbb{R}^{12}\) back to
@@ -261,94 +261,114 @@
                     consistent with rigid-body motion.
 
                 </div>
-
-
             </div>
-        </div>
-    </section>
+            <hr />
 
-    <!-- 
-    <section class="section" style="background-color: rgb(252, 252, 252);">
-        <div class="container is-max-desktop">
+            <h4 class="title is-4 has-text-centered">\(\text{Denoising using Classifier Guidance}\)</h4>
+
             <div class="columns has-text-centered">
-                <div class="column is-full-width">
-                    <h2 class="title is-3">Results (Coming soon)</h2>
-                </div>
+              <div class="column is-full-width mt-2">
+                <video autoplay loop muted poster="" preload="none" style="width:100%;">
+                  <source src="./static/videos/only_graph_cropped3.mp4">
+                </video>
+              </div>
             </div>
-        </div>
-    </section> -->
-
-    <section class="section" style="background-color: rgb(255, 255, 255);">
-        <div class="container is-max-desktop">
-            <div class="columns has-text-centered">
-                <div class="column is-full-width">
-                    <video autoplay loop muted poster="" preload="none" style="width:100%;">
-                        <source src="./static/videos/only_graph.webm">
-                    </video>
+            
+            <!-- Colormap bar -->
+            <div class="columns has-text-centered my-5">
+              <div class="column is-full-width">
+                <div style="
+                    background: linear-gradient(to right, rgb(255, 85, 85), rgb(63, 255, 63));
+                    height: 12px;
+                    border-radius: 30px;
+                    margin: 0 auto;
+                    width: 70%;
+                    position: relative;">
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" style="background-color: rgb(252, 252, 252);">
-        <div class="container is-max-desktop">
-          <div class="columns has-text-centered">
-            <div class="column is-full-width">
-              <h2 class="title is-3">
-                Real Life Results <sup style="font-size: 15px;">&dagger;</sup>
-              </h2>
-
-              <p class="is-size-7 has-text-grey mt-4 has-text-right">
-                <sup>&dagger;</sup> Unseen object categories
-              </p>
-      
-              <div class="columns is-multiline is-centered">
-                <div class="column is-half my-5">
-                  <video autoplay loop muted poster="" preload="none"
-                    style="width:100%; border: 2px solid #ddd; border-radius: 10px;">
-                    <source src="./static/videos/real_life_bucket.webm">
-                  </video>
-                  <h4 class="title is-5">(a) Bucket</h4>
-                </div>
-      
-                <div class="column is-half my-5">
-                  <video autoplay loop muted poster="" preload="none"
-                    style="width:100%; border: 2px solid #ddd; border-radius: 10px;">
-                    <source src="./static/videos/real_life_tray.webm">
-                  </video>
-                  <h4 class="title is-5">(b) Tray</h4>
-                </div>
-      
-                <div class="column is-half my-5">
-                  <video autoplay loop muted poster="" preload="none"
-                    style="width:100%; border: 2px solid #ddd; border-radius: 10px;">
-                    <source src="./static/videos/real_life_drone.webm">
-                  </video>
-                  <h4 class="title is-5">(c) Drone</h4>
-                </div>
-      
-                <div class="column is-half my-5">
-                  <video autoplay loop muted poster="" preload="none"
-                    style="width:100%; border: 2px solid #ddd; border-radius: 10px;">
-                    <source src="./static/videos/real_life_frypan.webm">
-                  </video>
-                  <h4 class="title is-5">(d) Frypan</h4>
-                </div>
-      
-                <div class="column is-half my-5">
-                  <video autoplay loop muted poster="" preload="none"
-                    style="width:100%; border: 2px solid #ddd; border-radius: 10px;">
-                    <source src="./static/videos/real_life_saucepan.webm">
-                  </video>
-                  <h4 class="title is-5">(e) Saucepan</h4>
+                <div style="display: flex; justify-content: space-between; width: 70%; margin: 5px auto 0 auto; font-size: 0.9rem;">
+                  <span style="color: rgb(182, 1, 1); font-weight: 500;">Noisy Grasp Pairs</span>
+                  <span style="color: rgb(45, 150, 45); font-weight: 500;">Stable Grasp Pairs</span>
                 </div>
               </div>
-      
-              <!-- footnote -->
             </div>
-          </div>
+            
+            <div class="content has-text-justified my-4">
+              <b>Overview of the denoising process:</b> The above clip shows the joint denoising process step by step. As the
+              time progresses, the <span style="color: rgb(182, 1, 1);">Energy \((E_\alpha)\)</span> gradually
+              decreases, which means grasps are moving towards the object and
+              not just floating in free space. At the same time, the <span
+                style="color:rgb(11, 33, 158)">Force-Closure Probability \((C_{\beta}^{\text{fc}})\)</span> steadily
+              increases,
+              highlighting how the grasp becomes more stable and reliable over time. Finally, in the later stages of
+              denoising, colliding grasps are
+              refined for a small number of iterations using <span style="color:rgb(45, 150, 45)">Collision Classifier
+                \((C_{\gamma}^{\text{col}})\)</span>, resulting in dual-arm grasps that are force-closure stable as
+              well as collision-free.
+            </div>
+            
+            
         </div>
-      </section>      
+    </section>
+
+    <section class="section" style="background-color: rgb(252, 252, 252);">
+        <div class="container is-max-desktop">
+            <div class="columns has-text-centered">
+                <div class="column is-full-width">
+                    <h2 class="title is-3">
+                        Real Life Results <sup style="font-size: 15px;">&dagger;</sup>
+                    </h2>
+
+                    <p class="is-size-7 has-text-grey mt-4 has-text-right">
+                        <sup>&dagger;</sup> Unseen object categories
+                    </p>
+
+                    <div class="columns is-multiline is-centered">
+                        <div class="column is-half my-5">
+                            <video autoplay loop muted poster="" preload="none"
+                                style="width:100%; border: 2px solid #ddd; border-radius: 10px;">
+                                <source src="./static/videos/real_life_bucket.webm">
+                            </video>
+                            <h4 class="title is-5">(a) Bucket</h4>
+                        </div>
+
+                        <div class="column is-half my-5">
+                            <video autoplay loop muted poster="" preload="none"
+                                style="width:100%; border: 2px solid #ddd; border-radius: 10px;">
+                                <source src="./static/videos/real_life_tray.webm">
+                            </video>
+                            <h4 class="title is-5">(b) Tray</h4>
+                        </div>
+
+                        <div class="column is-half my-5">
+                            <video autoplay loop muted poster="" preload="none"
+                                style="width:100%; border: 2px solid #ddd; border-radius: 10px;">
+                                <source src="./static/videos/real_life_drone.webm">
+                            </video>
+                            <h4 class="title is-5">(c) Drone</h4>
+                        </div>
+
+                        <div class="column is-half my-5">
+                            <video autoplay loop muted poster="" preload="none"
+                                style="width:100%; border: 2px solid #ddd; border-radius: 10px;">
+                                <source src="./static/videos/real_life_frypan.webm">
+                            </video>
+                            <h4 class="title is-5">(d) Frypan</h4>
+                        </div>
+
+                        <div class="column is-half my-5">
+                            <video autoplay loop muted poster="" preload="none"
+                                style="width:100%; border: 2px solid #ddd; border-radius: 10px;">
+                                <source src="./static/videos/real_life_saucepan.webm">
+                            </video>
+                            <h4 class="title is-5">(e) Saucepan</h4>
+                        </div>
+                    </div>
+
+                    <!-- footnote -->
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- <section class="section" id="BibTeX" style="margin-bottom: 1rem;">
         <div class="container is-max-desktop content">
