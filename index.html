@@ -216,7 +216,8 @@
                     <h2 class="title is-2">Model Architecture</h2>
                     <img class="mt-4" src="./static/images/pipeline.svg">
                     <div class="content has-text-justified my-4">
-                        <b>Overview of the proposed method</b>: <b>(a)</b> Given an object point cloud \(P\), our network
+                        <b>Overview of the proposed method</b>: <b>(a)</b> Given an object point cloud \(P\), our
+                        network
                         encodes
                         geometric features into dense feature maps. Next,
                         randomly initialized dual-arm grasps \(H\) are used to transform a fixed query cloud into query
@@ -246,7 +247,8 @@
                 </div>
 
                 <div class="column is-full-width">
-                    <b>Denoising in the dual-arm grasp space:</b> Additionally, dual-arm grasp poses are represented as pairs of rigid-body transformations
+                    <b>Denoising in the dual-arm grasp space:</b> Additionally, dual-arm grasp poses are represented as
+                    pairs of rigid-body transformations
                     in \(SE(3) \times SE(3)\), which are mapped into a \(12\text{D}\) Euclidean space for diffusion and
                     back.
                     Each \(SE(3)\) element is
@@ -267,46 +269,48 @@
             <h4 class="title is-4 has-text-centered">Denoising using Classifier Guidance</h4>
 
             <div class="columns has-text-centered">
-              <div class="column is-full-width mt-2">
-                <video autoplay loop muted poster="" preload="none" style="width:100%;">
-                  <source src="./static/videos/only_graph_cropped3.mp4">
-                </video>
-              </div>
+                <div class="column is-full-width mt-2">
+                    <video autoplay loop muted poster="" preload="none" style="width:100%;">
+                        <source src="./static/videos/only_graph_cropped3.mp4">
+                    </video>
+                </div>
             </div>
-            
+
             <!-- Colormap bar -->
             <div class="columns has-text-centered my-5">
-              <div class="column is-full-width">
-                <div style="
+                <div class="column is-full-width">
+                    <div style="
                     background: linear-gradient(to right, rgb(255, 85, 85), rgb(63, 255, 63));
                     height: 12px;
                     border-radius: 30px;
                     margin: 0 auto;
                     width: 70%;
                     position: relative;">
+                    </div>
+                    <div
+                        style="display: flex; justify-content: space-between; width: 70%; margin: 5px auto 0 auto; font-size: 0.9rem;">
+                        <span style="color: rgb(182, 1, 1); font-weight: 500;">Noisy Grasp Pairs</span>
+                        <span style="color: rgb(45, 150, 45); font-weight: 500;">Stable Grasp Pairs</span>
+                    </div>
                 </div>
-                <div style="display: flex; justify-content: space-between; width: 70%; margin: 5px auto 0 auto; font-size: 0.9rem;">
-                  <span style="color: rgb(182, 1, 1); font-weight: 500;">Noisy Grasp Pairs</span>
-                  <span style="color: rgb(45, 150, 45); font-weight: 500;">Stable Grasp Pairs</span>
-                </div>
-              </div>
             </div>
-            
+
             <div class="content has-text-justified my-4">
-              <b>Overview of the denoising process:</b> The above clip shows the joint denoising process step by step. As the
-              time progresses, the <span style="color: rgb(182, 1, 1);">Energy \((E_\alpha)\)</span> gradually
-              decreases, which means grasps are moving towards the object and
-              not just floating in free space. At the same time, the <span
-                style="color:rgb(11, 33, 158)">Force-Closure Probability \((C_{\beta}^{\text{fc}})\)</span> steadily
-              increases,
-              highlighting how the grasp becomes more stable and reliable over time. Finally, in the later stages of
-              denoising, colliding grasps are
-              refined for a small number of iterations using <span style="color:rgb(45, 150, 45)">Collision Classifier
-                \((C_{\gamma}^{\text{col}})\)</span>, resulting in dual-arm grasps that are force-closure stable as
-              well as collision-free.
+                <b>Overview of the denoising process:</b> The above clip shows the joint denoising process step by step.
+                As the
+                time progresses, the <span style="color: rgb(182, 1, 1);">Energy \((E_\alpha)\)</span> gradually
+                decreases, which means grasps are moving towards the object and
+                not just floating in free space. At the same time, the <span
+                    style="color:rgb(11, 33, 158)">Force-Closure Probability \((C_{\beta}^{\text{fc}})\)</span> steadily
+                increases,
+                highlighting how the grasp becomes more stable and reliable over time. Finally, in the later stages of
+                denoising, colliding grasps are
+                refined for a small number of iterations using <span style="color:rgb(45, 150, 45)">Collision Classifier
+                    \((C_{\gamma}^{\text{col}})\)</span>, resulting in dual-arm grasps that are force-closure stable as
+                well as collision-free.
             </div>
-            
-            
+
+
         </div>
     </section>
 
@@ -314,7 +318,7 @@
         <div class="container is-max-desktop">
             <div class="columns has-text-centered">
                 <div class="column is-full-width">
-                    <h2 class="title is-3">
+                    <h2 class="title is-2">
                         Real Life Results <sup style="font-size: 15px;">&dagger;</sup>
                     </h2>
 
@@ -367,6 +371,158 @@
                     <!-- footnote -->
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section class="section" style="background-color:#fff;">
+        <div class="container is-max-desktop">
+            <h2 class="title is-2 has-text-centered">Quantitative Results</h2>
+            <p class="has-text-centered is-size-6 mb-4">
+                Comparison on our evaluation set (<span class="icon"><i class="fas fa-arrow-up"></i></span>higher is
+                better, <span class="icon"><i class="fas fa-arrow-down"></i></span> lower is better).
+            </p>
+
+            <h3 class="title is-5 mt-5 pt-5">1. Comparison with Baselines</h3>
+
+            <!-- Main comparison -->
+            <div class="table-container">
+                <table class="table is-striped is-hoverable is-fullwidth">
+                    <thead>
+                        <tr>
+                            <th>Method</th>
+                            <th class="has-text-right">FCE&nbsp;(%) <span class="icon"><i
+                                        class="fas fas-solid fa-arrow-up"></i></span></th>
+                            <th class="has-text-right">GSR&nbsp;(%) <span class="icon"><i
+                                        class="fas fa-arrow-up"></i></span></th>
+                            <th class="has-text-right">GCR&nbsp;(%) <span class="icon"><i
+                                        class="fas fa-arrow-down"></i></span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="">
+                            <td><b>DAGDiff (ours)</b></td>
+                            <td class="has-text-right"><b>60.14</b></td>
+                            <td class="has-text-right"><b>72.50</b></td>
+                            <td class="has-text-right"><b>15.10</b></td>
+                        </tr>
+                        <tr>
+                            <td>CGDF</td>
+                            <td class="has-text-right">35.14</td>
+                            <td class="has-text-right">56.25</td>
+                            <td class="has-text-right">30.55</td>
+                        </tr>
+                        <tr>
+                            <td>VCGS</td>
+                            <td class="has-text-right">16.85</td>
+                            <td class="has-text-right">23.36</td>
+                            <td class="has-text-right">74.73</td>
+                        </tr>
+                        <tr>
+                            <td>UniDiffGrasp</td>
+                            <td class="has-text-right">10.10</td>
+                            <td class="has-text-right">31.68</td>
+                            <td class="has-text-right">59.90</td>
+                        </tr>
+                        <tr>
+                            <td>RoboBrainGrasp-KP</td>
+                            <td class="has-text-right">9.80</td>
+                            <td class="has-text-right">27.85</td>
+                            <td class="has-text-right">66.30</td>
+                        </tr>
+                        <tr>
+                            <td>RoboBrainGrasp-BB</td>
+                            <td class="has-text-right">7.12</td>
+                            <td class="has-text-right">27.81</td>
+                            <td class="has-text-right">70.26</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Dual-Afford (zero-shot) block -->
+            <h3 class="title is-5 mt-5 pt-5">2. Zero-Shot on Dual-Afford Objects<sup>†</sup></h3>
+            <div class="table-container">
+                <table class="table is-narrow is-striped is-fullwidth is-hoverable">
+                    <thead>
+                        <tr>
+                            <th>Method</th>
+                            <th class="has-text-right">FCE&nbsp;(%) <span class="icon is-small"><i
+                                        class="fas fa-arrow-up"></i></span></th>
+                            <th class="has-text-right">GSR&nbsp;(%) <span class="icon is-small"><i
+                                        class="fas fa-arrow-up"></i></span></th>
+                            <th class="has-text-right">GCR&nbsp;(%) <span class="icon is-small"><i
+                                        class="fas fa-arrow-down"></i></span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>Ours-DA</b><sup>†</sup></td>
+                            <td class="has-text-right"><b>56.45</b></td>
+                            <td class="has-text-right"><b>68.80</b></td>
+                            <td class="has-text-right"><b>18.59</b></td>
+                        </tr>
+                        <tr>
+                            <td>Dual-Afford<sup>††</sup></td>
+                            <td class="has-text-right">–</td>
+                            <td class="has-text-right">54.33</td>
+                            <td class="has-text-right">–</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+            <p class="is-size-7 has-text-grey mt-2">
+                <sup>†</sup> Evaluated on Dual-Afford objects in a zero-shot setting. <br>
+                <sup>††</sup> Values reported directly from the Dual-Afford paper.
+            </p>
+
+
+            <h3 class="title is-5 mt-5 pt-5">3. Real-World Dual-Arm Grasp Results</h3>
+
+            <div class="table-container">
+                <table class="table is-striped is-hoverable is-fullwidth has-text-centered">
+                    <thead>
+                        <tr>
+                            <th>Object</th>
+                            <th>Tray</th>
+                            <th>Bucket</th>
+                            <th>Saucepan</th>
+                            <th>Frypan</th>
+                            <th>Drone</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Success</th>
+                            <td>6/10</td>
+                            <td>8/10</td>
+                            <td>7/10</td>
+                            <td>6/10</td>
+                            <td>5/10</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="content has-text-justified my-4">
+                <b>Quantitative Results:</b> DAGDiff consistently outperforms across all evaluation settings. It outperforms prior
+                methods in <u>Force-Closure Evaluation (FCE)</u> and <u>Grasp Success Rate (GSR)</u> while maintaining the lowest <u>Grasp
+                Collision Rate (GCR)</u>, indicating more physically valid and robust dual-arm grasps. In zero-shot transfer
+                to Dual-Afford objects, DAGDiff continues to show strong generalization without task-specific
+                retraining. Finally, real-world experiments on unseen objects such as trays, buckets, and pans
+                demonstrate consistent success, confirming that DAGDiff’s classifier-guided diffusion produces grasps
+                that are stable, collision-free, and transferable beyond simulation. Real-life failures occur mostly due to noisy point-cloud estimation and 
+                hance generated grasps are not always perfect.
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section" id="BibTeX" style="margin-bottom: 1rem;">
+        <div class="container is-max-desktop content">
+            <h2 class="title">BibTeX</h2>
+            <pre><code>Will be updated</code></pre>
         </div>
     </section>
 
