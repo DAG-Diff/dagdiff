@@ -49,23 +49,46 @@
                             Dual-Arm Grasp Diffusion to Stable and Collision-Free Grasps
                         </h1>
 
+                        <div style="
+                            display: inline-block;
+                            padding: 2px;
+                            border-radius: 12px;
+                            background: linear-gradient(90deg,  hsl(251, 100%, 65%), hsl(278, 100%, 73%));
+                            margin-bottom: 15px;
+                        ">
+                            <div style="
+                                background: white;
+                                border-radius: 10px;
+                                padding: 12px 18px;
+                                text-align: center;
+                            ">
+                                <h2 class="title is-5" style="margin: 0;">
+                                    Accepted at ICRA 2026
+                                </h2>
+                            </div>
+                        </div>
+
+
                         <div class="is-size-5 publication-authors">
                             <span class="author-block">
                                 <a href="https://researchweb.iiit.ac.in/~md.faizal/" target="_blank">Md Faizal
                                     Karim</a><sup>1⭐</sup>,</span>
                             <span class="author-block">
-                                <a href="https://in.linkedin.com/in/vignesh-vembar" target="_blank">Vignesh Vembar</a><sup>1⭐</sup>,</span>
+                                <a href="https://in.linkedin.com/in/vignesh-vembar" target="_blank">Vignesh
+                                    Vembar</a><sup>1⭐</sup>,</span>
                             <span class="author-block">
-                                <a href="https://sites.google.com/site/keshabpatra19" target="_blank">Keshab Patra</a><sup>1</sup>,
+                                <a href="https://sites.google.com/site/keshabpatra19" target="_blank">Keshab
+                                    Patra</a><sup>1</sup>,
                             </span>
                             <span class="author-block">
                                 <a href="https://vanhalen42.github.io/" target="_blank">Gaurav Singh</a><sup>2</sup>,
                             </span>
                             <span class="author-block">
-                                <a href="https://scholar.google.com/citations?user=QDuPGHwAAAAJ" target="_blank">K Madhava Krishna</a><sup>1</sup>
+                                <a href="https://scholar.google.com/citations?user=QDuPGHwAAAAJ" target="_blank">K
+                                    Madhava Krishna</a><sup>1</sup>
                             </span>
-                        </div> 
-                        
+                        </div>
+
                         <div class="is-size-5 publication-authors">
                             <span class="author-block"><sup>1</sup>IIIT Hyderabad </span>
                             <span class="author-block"><sup>2</sup>Brown University</span>
@@ -73,8 +96,7 @@
                             <span class="author-block"><sup>⭐</sup>Equal contribution</span>
                             <br>
                         </div>
-                        
-                        <!-- 
+
 
                         <div class="column has-text-centered">
                             <div class="publication-links">
@@ -88,14 +110,15 @@
                                     </a>
                                 </span>
 
-                                <!-- <span class="link-block">
-                                    <a href="#" class="external-link button is-normal is-rounded is-dark">
+                                <span class="link-block">
+                                    <a href="https://arxiv.org/abs/2509.21145"
+                                        class="external-link button is-normal is-rounded is-dark">
                                         <span class="icon">
                                             <i class="ai ai-arxiv"></i>
                                         </span>
                                         <span>arXiv</span>
                                     </a>
-                                </span> -->
+                                </span>
                                 <span class="link-block">
                                     <a href="#video" class="external-link button is-normal is-rounded is-dark">
                                         <span class="icon">
@@ -105,7 +128,7 @@
                                     </a>
                                 </span>
                                 <span class="link-block">
-                                    <a href="https://anonymous.4open.science/r/dual-arm-grasp-diffusion-E5AF/README.md"
+                                    <a href="https://github.com/DAG-Diff/dual-arm-grasp-diffusion"
                                         class="external-link button is-normal is-rounded is-dark">
                                         <span class="icon">
                                             <i class="fab fa-github"></i>
@@ -506,25 +529,29 @@
             </div>
 
             <div class="content has-text-justified my-4">
-                <b>Quantitative Results:</b> DAGDiff consistently outperforms across all evaluation settings. It outperforms prior
-                methods in <u>Force-Closure Evaluation (FCE)</u> and <u>Grasp Success Rate (GSR)</u> while maintaining the lowest <u>Grasp
-                Collision Rate (GCR)</u>, indicating more physically valid and robust dual-arm grasps. In zero-shot transfer
+                <b>Quantitative Results:</b> DAGDiff consistently outperforms across all evaluation settings. It
+                outperforms prior
+                methods in <u>Force-Closure Evaluation (FCE)</u> and <u>Grasp Success Rate (GSR)</u> while maintaining
+                the lowest <u>Grasp
+                    Collision Rate (GCR)</u>, indicating more physically valid and robust dual-arm grasps. In zero-shot
+                transfer
                 to Dual-Afford objects, DAGDiff continues to show strong generalization without task-specific
                 retraining. Finally, real-world experiments on unseen objects such as trays, buckets, and pans
                 demonstrate consistent success, confirming that DAGDiff’s classifier-guided diffusion produces grasps
-                that are stable, collision-free, and transferable beyond simulation. Real-life failures occur mostly due to noisy point-cloud estimation and 
+                that are stable, collision-free, and transferable beyond simulation. Real-life failures occur mostly due
+                to noisy point-cloud estimation and
                 hance generated grasps in these cases are not always perfect.
             </div>
         </div>
     </section>
 
 
-    <section class="section" id="BibTeX" style="margin-bottom: 1rem;">
+    <!-- <section class="section" id="BibTeX" style="margin-bottom: 1rem;">
         <div class="container is-max-desktop content">
             <h2 class="title">BibTeX</h2>
             <pre><code>Will be updated</code></pre>
         </div>
-    </section>
+    </section> -->
 
     <section class="section" id="BibTeX" style="margin-bottom: 1rem;">
         <div class="container is-max-desktop content">
@@ -548,7 +575,7 @@
                             This website is licensed under a <a rel="license"
                                 href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
                                 Commons Attribution-Share Alike 4.0 International License</a>. It is borrowing this <a
-                                href="https://github.com/nerfies/nerfies.github.io">source code</a>
+                                href="https://github.com/nerfies/nerfies.github.io">source code.</a>
                         </p>
                     </div>
                 </div>
